@@ -1,5 +1,5 @@
 # Back-End
-
+This project for plactice how to create backend with node and noSQL and SQL
 # Start 🚀
 
 Start on 1 November 2020 🍀
