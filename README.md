@@ -14,5 +14,6 @@ Start on 1 November 2020 🍀
 ☑ JavaScript Es5<br/>
 ☑ Libraries<br/>
 ☑ Postman<br/>
+☑ Routing<br/>
 ☑ SQL with Node (mySQL)<br/>
 ☑ noSQL with Node (Mongodb)
