@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const func = require("./register");
+const func = require("./functions");
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
@@ -9,14 +9,19 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  var name = req.body.name;
   const user = {
-    name: name,
+    username: req.body.username,
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
   };
-
-  func.register(name)
-    ? res.status(201).json({ message: " Registered " })
-    : res.status(400).json({ message: " Something went wrong " });
+  const register = func.register(user);
+  const objRegisterLength = Object.keys(register).length;
+  
+  if (objRegisterLength == 0)
+    return res.status(201).json({ message: " Registered " });
+  else res.status(400).json({ message: register });
 });
 
 const PORT = 5000;
