@@ -10,7 +10,6 @@ exports.register = function (data) {
   if (_.isEmpty(user.password)) errors.password = "password is empty";
   if (_.isEmpty(user.firstName)) errors.firstName = "firstname is empty";
   if (_.isEmpty(user.lastName)) errors.lastName = "lastname is empty";
-  if (_.isEmpty(user.email)) errors.email = "email is empty";
 
   // Check regEx
   if (!user.email.match(regEx)) errors.email = "invalid email";
