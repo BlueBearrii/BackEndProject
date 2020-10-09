@@ -1,25 +1,15 @@
 const express = require("express");
 const app = express();
+const func = require("./functions");
+
+// Body-parser 🍀
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+// Firebase initialization 🚀
 const firebase = require("firebase");
 const firebaseConfigs = require("./firebaseConfigs");
 firebase.initializeApp(firebaseConfigs);
-
-const mysql = require("mysql");
-
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-});
-
-connection.connect(function (err) {
-  console.log("Connected!");
-});
-
-const func = require("./functions");
 
 app.post("/register", (req, res) => {
   const user = {
