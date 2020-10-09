@@ -39,9 +39,19 @@ app.post("/register", (req, res) => {
 
 app.post("/login", (req, res) => {
   const user = {
-    username: req.body.username,
+    email: req.body.email,
     password: req.body.password,
   };
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(user.email, user.password)
+    .then((user) => {
+      return res.status(201).json({ message: user });
+    })
+    .catch((err) => {
+      return res.status(400).json({ message: err });
+    });
 });
 
 const PORT = 5000;
