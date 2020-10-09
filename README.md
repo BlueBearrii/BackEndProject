@@ -24,3 +24,10 @@ Start on 1 November 2020 🍀
 ☑️ SQL with Node (mySQL)<br/>
 ☑️ noSQL with Node (Mongodb)<br/>
 ✅ Create authentication with Firebase
+
+## Routing
+
+| Route name   | Path      | Description                                   |
+| ------------ | --------- | --------------------------------------------- |
+| **Register** | /register | For register new user firebase authentication |
+| **Login**    | /login    | For login with Firebase                       |
