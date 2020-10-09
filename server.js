@@ -17,11 +17,19 @@ app.post("/register", (req, res) => {
     email: req.body.email,
   };
   const register = func.register(user);
-  const objRegisterLength = Object.keys(register).length;
-  
-  if (objRegisterLength == 0)
+  const objRegisterErrors = Object.keys(register).length;
+
+  if (objRegisterErrors == 0)
     return res.status(201).json({ message: " Registered " });
   else res.status(400).json({ message: register });
+});
+
+app.post("/login", (req, res) => {
+  const user = {
+    username: req.body.username,
+    password: req.body.password,
+  };
+  
 });
 
 const PORT = 5000;
