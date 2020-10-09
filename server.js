@@ -1,12 +1,25 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const func = require("./functions");
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+const firebase = require("firebase");
+const firebaseConfigs = require("./firebaseConfigs");
+firebase.initializeApp(firebaseConfigs);
+
+const mysql = require("mysql");
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
 });
+
+connection.connect(function (err) {
+  console.log("Connected!");
+});
+
+const func = require("./functions");
 
 app.post("/register", (req, res) => {
   const user = {
@@ -19,8 +32,18 @@ app.post("/register", (req, res) => {
   const register = func.register(user);
   const objRegisterErrors = Object.keys(register).length;
 
-  if (objRegisterErrors == 0)
-    return res.status(201).json({ message: " Registered " });
+  if (objRegisterErrors == 0) {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(user.email, user.password)
+      .then((user) => {
+        return res.status(201).json({ message: user });
+      })
+      .catch((err) => {
+        return res.status(400).json({ message: err });
+      });
+  }
+  //return res.status(201).json({ message: " Registered " });
   else res.status(400).json({ message: register });
 });
 
@@ -29,7 +52,6 @@ app.post("/login", (req, res) => {
     username: req.body.username,
     password: req.body.password,
   };
-  
 });
 
 const PORT = 5000;
