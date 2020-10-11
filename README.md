@@ -11,7 +11,7 @@ Start on 1 November 2020 🍀
 🚀 Create init<br/>
 📦 Express Nodemon<br/>
 🍀 Firebase authentication<br/>
-📚 Create register route<br/>
+📚 Create register route and function register<br/>
 🔐 Create login route<br/>
 
 # Target 🎯
