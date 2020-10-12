@@ -13,6 +13,7 @@ Start on 1 November 2020 🍀
 🍀 Firebase authentication<br/>
 📚 Create register route and register function<br/>
 🔐 Create login route and login function<br/>
+🔐 Update user data to sql database when completely register account<br/>
 
 # Target 🎯
 
@@ -21,13 +22,14 @@ Start on 1 November 2020 🍀
 ✅ Libraries<br/>
 ✅ Postman<br/>
 ✅ Routing<br/>
-☑️ SQL with Node (mySQL)<br/>
+✅ SQL with Node (mySQL)<br/>
 ☑️ noSQL with Node (Mongodb)<br/>
 ✅ Create authentication with Firebase
 
 ## Routing
 
-| Route name   | Path      | Description                                   |
-| ------------ | --------- | --------------------------------------------- |
-| **Register** | /register | For register new user firebase authentication |
-| **Login**    | /login    | For login with Firebase                       |
+| Route name       | Method   | Path      | Description                                   |
+| ---------------- | -------- | --------- | --------------------------------------------- |
+| **Register**     | **POST** | /register | For register new user firebase authentication |
+| **Login**        | **POST** | /login    | For login with Firebase                       |
+| **Get all user** | **GET**  | /users    | Get all user data from mySql                  |
