@@ -21,7 +21,7 @@
     "express": "^4.17.1",
     "firebase": "^7.23.0",
     "lodash": "^4.17.20",
-    "mysql": "github:mysqljs/mysql",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
   }
 }
