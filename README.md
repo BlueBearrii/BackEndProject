@@ -1,6 +1,6 @@
 # Back-End
 
-This project for plactice how to create backend with node and noSQL and SQL
+This project for practice how to create backend with node and noSQL and SQL
 
 # Start 🚀
 
