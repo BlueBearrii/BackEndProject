@@ -83,7 +83,9 @@ app.get("/users", async (req, res) => {
   res.json("Done ...");
 });
 
-app.get("/testQRCode", async (req, res) => {});
+app.get("/testQRCode", async (req, res) => {
+  res.send("This path for call QR Code API")
+});
 
 const PORT = 5000;
 app.listen(PORT, () => {
