@@ -83,11 +83,7 @@ app.get("/users", async (req, res) => {
   res.json("Done ...");
 });
 
-app.get("/testQRCode", async (req, res) => {
-  const URL =
-    "http://api.qrserver.com/v1/create-qr-code/?data=https://github.com/BlueBearrii&size=100x100";
-  const getAPI = await axios.get(URL);
-});
+app.get("/testQRCode", async (req, res) => {});
 
 const PORT = 5000;
 app.listen(PORT, () => {
