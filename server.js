@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const axios = require("axios").default;
 const func = require("./functions");
 
 // mySql initialization 🗃️
@@ -53,8 +54,7 @@ app.post("/register", (req, res) => {
       .catch((err) => {
         return res.status(400).json({ message: err });
       });
-  }
-  else res.status(400).json({ message: register });
+  } else res.status(400).json({ message: register });
 });
 
 app.post("/login", (req, res) => {
@@ -81,6 +81,12 @@ app.get("/users", async (req, res) => {
     console.log(res);
   });
   res.json("Done ...");
+});
+
+app.get("/testQRCode", async (req, res) => {
+  const URL =
+    "http://api.qrserver.com/v1/create-qr-code/?data=https://github.com/BlueBearrii&size=100x100";
+  const getAPI = await axios.get(URL);
 });
 
 const PORT = 5000;
