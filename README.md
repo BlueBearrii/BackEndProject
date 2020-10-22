@@ -25,7 +25,8 @@ Start on 1 November 2020 🍀
 ✅ SQL with Node (mySQL)<br/>
 ☑️ noSQL with Node (Mongodb)<br/>
 ✅ Create authentication with Firebase<br/>
-☑️ User sequelize ORM
+☑️ User sequelize ORM<br/>
+✅ Axios
 
 ## Routing
 
